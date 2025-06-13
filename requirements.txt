@@ -11,3 +11,4 @@ python-dotenv
 google-generativeai
 numpy
 easyocr
+timm
