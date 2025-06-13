@@ -8,6 +8,6 @@ services:
       - key: PYTHON_VERSION
         value: "3.11"
       - key: GEMINI_API_KEY
-        value: "AIzaSyAYQ_Kv8qqHo7ibf5PENnSzScScboU9fTY"  # Or leave this blank and set it securely in the dashboard
+        value: ""  # Set this manually in the dashboard
       - key: STEP_RATIO
         value: "75"
