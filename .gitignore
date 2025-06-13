@@ -1,0 +1,52 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.python-version
+
+# Environment variables
+.env
+
+# Model and weights
+*.pt
+*.pth
+*.onnx
+
+# Large files and generated media
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+*.wav
+*.mp3
+*.log
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test client scripts
+client.py
+client_tts.py
+client_ngui.py
+
+# Zip or backup files
+*.zip
+*.tar.gz
+*.rar
