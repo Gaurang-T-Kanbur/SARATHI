@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import google.generativeai as genai
 
 from .detect import load_yolo_model, run_detection
-from .depth import load_midas_model, estimate_depth
+from .depth import load_depth_model, estimate_depth
 from .utils import read_image_as_np, get_distance_cm
 from .speech import speak_text
 
@@ -42,7 +42,8 @@ app.add_middleware(
 )
 
 yolo = load_yolo_model("models/yolov8n.pt")
-midas, transform = load_midas_model()
+midas = load_depth_model()
+
 
 # Store last detected centers for movement detection
 last_centers = {}
@@ -116,7 +117,8 @@ async def detect_object(file: UploadFile = File(...)):
     np_img = read_image_as_np(contents)
 
     detections = run_detection(yolo, np_img)
-    depth_map = estimate_depth(midas, transform, np_img)
+    depth_map = estimate_depth(midas, np_img)
+
 
     results = []
     movement_flags = {}
